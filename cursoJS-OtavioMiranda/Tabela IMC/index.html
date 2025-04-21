@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Torna o layout responsivo, ajustando o conteúdo à largura da tela do dispositivo -->
 
-    <title>Modelo</title>
+    <title>Calcule seu IMC</title>
     <!-- Define o título da aba do navegador -->
 
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -33,22 +33,20 @@
             <p>Entre 35 e 39,9 <br< /p>
             <p>mais do que 40 <br< /p>
             
-        </div>
 
-        <form class="form" action="" method="get">
+        <form id="formulario" action="/" method="POST">
             <label for="fullName"> Nome completo: </label>
-            <input type="text" id="input-teste-1">
+            <input type="text" id="fullName" name="fullName">
 
-            <label for="input-teste-1"> Peso: </label>
-            <input type="number" id="input-teste-4">
+            <label for="peso"> Peso: </label>
+            <input type="number" id="peso" name="peso">
 
-            <label for="input-teste-1"> Altura: </label>
-            <input type="number" id="input-teste-4">
+            <label for="altura"> Altura: </label>
+            <input type="number" id="altura" name="altura">
 
             <button>Enviar</button>
 
-            <div class="resultado">
-                <pt> teste</pt>
+            <div id="resultado">
             </div>
 
         </form>
