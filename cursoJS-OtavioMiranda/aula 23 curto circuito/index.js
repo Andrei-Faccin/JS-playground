@@ -18,4 +18,7 @@ console.log(resultado); // null
 
 const resultado = false || (true && "Valor");
 console.log(resultado); // "Valor"
+
+const corUsuario = null;
+const corPadrao = corUsuario || 'preto';
 */

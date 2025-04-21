@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap'); /* importa a fonte 'Open Sans' do Google Fonts */
+
+:root{
+    --primary-color:rgb(13, 106, 134); /* variável de cor primária */
+    --primary-color-darker:rgb(4, 40, 51); /* cor primária em tom mais escuro */
+}
+
+* {
+    box-sizing: border-box; /* inclui padding e border na largura total do elemento */
+    outline: 0; /* remove contorno ao focar em elementos */
+}
+
+body {
+    margin: 0; /* remove margem padrão */
+    padding: 0; /* remove padding padrão */
+    background: var(--primary-color); /* cor de fundo da página */
+    font-family: 'open sans', sans-serif; /* define a fonte principal */
+    font-size: 1.3em; /* tamanho base da fonte */
+    line-height: 1.5em; /* altura da linha para melhor legibilidade */
+}
+
+.container {
+    max-width: 640px; /* largura máxima da área de conteúdo */
+    margin: 50px auto; /* vai por o conteudo no meio da tela */
+    background: #fff; /* cor de fundo branca */
+    padding: 20px; /* espaçamento interno */
+    border-radius: 10px; /* bordas arredondadas */
+}
+
+form input, form label, form button {
+    display: block; /* exibe os elementos em bloco, ocupando toda a linha */
+    width: 100%; /* ocupa toda a largura do contêiner pai */
+    margin-bottom: 10px; /* espaçamento inferior entre elementos */
+}
+
+form input {
+    font-size: 24px; /* tamanho da fonte nos campos de input */
+    height: 50px; /* altura dos campos de input */
+    padding: 0 20px; /* espaçamento interno à esquerda e direita */
+}
+
+form input:focus{
+    outline: 1px solid var(--primary-color); /* destaca o input focado com borda da cor primária */
+}
+
+form button {
+    border: none; /* remove a borda padrão do botão */
+    background: var(--primary-color); /* cor de fundo do botão */
+    color: #fff; /* cor do texto no botão */
+    font-size: 18px; /* tamanho da fonte do botão */
+    font-weight: 700; /* peso da fonte (negrito) */
+    height: 50px; /* altura do botão */
+    cursor: pointer; /* muda o cursor para “mãozinha” ao passar por cima */
+    margin-top: 30px; /* espaçamento superior do botão */
+}
+
+form button:hover {
+    background: var(--primary-color-darker); /* muda a cor do botão quando o mouse passa por cima */
+}
