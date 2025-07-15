@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <!-- Define o tipo de codificação de caracteres -->
+    <meta charset="UTF-8" />
+    <!-- Define que a página será responsiva -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Entrada de texto para digitar uma nova tarefa -->
+    <p>Adicione sua tarefa</p>
+    <input id="entrada" type="text" />
+    <button onclick="salvarDados()">Salvar</button>
+
+    <br />
+    <p>Tarefa a fazer</p>
+
+    <!-- Onde a lista de tarefas será exibida -->
+    <div>
+      <ul id="resultados"></ul>
+    </div>
+
+    <!-- Área onde aparecerá o campo de edição quando clicar em "Editar" -->
+    <div id="editar"></div>
+
+    <script>
+      // Array que vai guardar as tarefas
+      let listaDeTarefas = [];
+      // Variável que garante um ID único para cada tarefa
+      let index = 0;
+
+      // Função chamada ao clicar no botão "Salvar"
+      function salvarDados() {
+        // Pega o valor digitado no input
+        let entrada = document.getElementById("entrada").value;
+
+        // Cria um objeto com id e texto da tarefa
+        let entradaObj = {
+          id: index,
+          texto: entrada,
+        };
+
+        // Incrementa o índice para o próximo ID
+        index++;
+
+        // Adiciona o objeto na lista de tarefas
+        listaDeTarefas.push(entradaObj);
+
+        // Atualiza a exibição da lista
+        mostrar();
+
+        // Limpa o campo de entrada após adicionar
+        document.getElementById("entrada").value = "";
+      }
+
+      // Função que monta o HTML com as tarefas
+      function mostrar() {
+        // Seleciona a <ul> onde as tarefas vão aparecer
+        let ul = document.getElementById("resultados");
+
+        // Começa com HTML vazio
+        let html = "";
+
+        // Para cada tarefa, cria um <li> com botão de editar
+        listaDeTarefas.forEach((elemento) => {
+          html += `<li>
+            ${elemento.texto}
+            <button onclick="editar(${elemento.id})">Editar</button>
+             <button onclick="deletar(${elemento.id})">Deletar</button>
+          </li>`;
+        });
+
+        // Insere os <li>s na <ul>
+        ul.innerHTML = html;
+      }
+
+      // Função chamada ao clicar em "Editar"
+      function editar(id) {
+        // Cria um campo de texto e botão para editar a tarefa selecionada
+        let html = `
+          <input type="text" id="textoParaEditar" placeholder="Novo texto">
+          <button onclick="editarDados(${id})">Salvar edição</button>
+        `;
+
+        // Exibe esse HTML dentro da div de edição
+        let diveditar = document.getElementById("editar");
+        diveditar.innerHTML = html;
+      }
+
+      // Função chamada ao clicar em "Salvar edição"
+      function editarDados(id) {
+        // Pega o novo texto digitado
+        let textoParaEditar = document.getElementById("textoParaEditar").value;
+
+        // Encontra o objeto da tarefa com o ID correspondente
+        let resultado = listaDeTarefas.find((obj) => obj.id === id);
+
+        // Atualiza o texto da tarefa
+        resultado.texto = textoParaEditar;
+
+        // Atualiza a exibição da lista
+        mostrar();
+
+        // Limpa a área de edição
+        document.getElementById("editar").innerHTML = "";
+      }
+
+      function deletar(id) {
+        let novalista = listaDeTarefas.filter((obj) => obj.id !== id);
+        listaDeTarefas = novalista;
+        mostrar();
+      }
+    </script>
+  </body>
+</html>
