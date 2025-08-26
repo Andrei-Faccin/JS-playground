@@ -1,1 +1,1 @@
-# Meu Parkinho de JS
+# Projetos treinando JS.
