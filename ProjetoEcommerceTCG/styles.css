@@ -1,0 +1,206 @@
+/* Fonte temática Pokémon */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+:root {
+  --primary-color: #ff1c1c; /* Vermelho pokébola */
+  --secondary-color: #1e2a78; /* Azul escuro */
+  --accent-color: #ffcc01; /* Amarelo Pikachu */
+  --text-color: #2c3e50;
+  --white-color: #ffffff;
+  --hover-btn: rgba(255, 255, 255, 0.1);
+  --light-gray: #f5f5f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background-color: var(--primary-color);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo h1 {
+  color: var(--white-color);
+  font-size: 22px;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.iconeTopo {
+  width: 60px;
+  height: 60px;
+}
+
+.container-busca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--white-color);
+  padding: 6px 12px;
+  border-radius: 24px;
+}
+
+.container-busca input {
+  border: none;
+  outline: none;
+  padding: 6px;
+  font-size: 14px;
+}
+
+.container-busca i {
+  color: var(--primary-color);
+}
+
+/* NAV CATEGORIAS */
+.container-categorias nav {
+  display: flex; /* deixa os botões em linha */
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center; /* alinha verticalmente */
+  gap: 16px; /* espaçamento entre os botões */
+  flex-wrap: wrap; /* permite quebrar linha em telas pequenas */
+  padding: 8px 32px;
+  background-color: #000;
+}
+
+.botao-categorias {
+  flex: 0 1 auto; /* evita que expandam ou quebrem desnecessariamente */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 2px solid var(--accent-color);
+  color: var(--white-color);
+  padding: 10px 18px;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.botao-categorias:hover,
+.botao-categorias.ativo {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* HERO SECTION */
+.secao-hero {
+  text-align: center;
+  color: var(--white-color);
+  padding: 60px 20px;
+  background: url("https://wallpapercave.com/wp/wp3083452.png") center/cover
+    no-repeat;
+  text-shadow: 3px 3px 6px black;
+}
+
+.secao-hero h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.secao-hero p {
+  font-size: 14px;
+}
+
+/* PRODUTOS */
+.produtos {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.produtos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.cartao-produto {
+  background-color: var(--white-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cartao-produto:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.imagem-produto {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.info-produto {
+  padding: 12px 16px;
+  font-weight: bold;
+}
+
+.descricao-produto {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.preco-produto {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.botao-produto {
+  width: 100%;
+  padding: 10px 0;
+  background-color: var(--accent-color);
+  border: none;
+  color: var(--secondary-color);
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botao-produto:hover {
+  background-color: #ffd700;
+  color: var(--primary-color);
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  text-align: center;
+  padding: 32px 16px;
+  font-size: 12px;
+}
+
+.persian-img {
+  height: 70px; /* tamanho do Persian */
+  margin: 0 20px; /* espaço entre logo e busca */
+  object-fit: contain;
+}
